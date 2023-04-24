@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIController : MonoBehaviour
@@ -10,14 +11,23 @@ public class UIController : MonoBehaviour
     [SerializeField]
     StageController stageContoller;
 
-    [Header("Common")]
+    [Header("InGame")]
     [SerializeField]
     TextMeshProUGUI textCurrentScore;
-
     [SerializeField]
     TextMeshProUGUI textHighScore;
     [SerializeField]
     UIPausePanelAnimation pausePanel;
+
+    [Header("GameOver")]
+    [SerializeField]
+    GameObject panelGameOver;
+    [SerializeField]
+    Screenshot screenshot;
+    [SerializeField]
+    Image imageScreenshot;
+    [SerializeField]
+    TextMeshProUGUI textResultScore;
     // Update is called once per frame
     void Update()
     {
@@ -48,4 +58,11 @@ public class UIController : MonoBehaviour
 		// 일시정지 Panel 퇴장 애니메이션 재생, 비활성화
 		pausePanel.OnDisappear();
 	}	
+    public void GameOver()
+    {
+        imageScreenshot.sprite = screenshot.ScreenshotToSprite();
+        textResultScore.text = stageContoller.CurrentScore.ToString();
+
+        panelGameOver.SetActive(true);
+    }
 }

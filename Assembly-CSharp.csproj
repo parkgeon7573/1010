@@ -57,14 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Game\BackgroundBlockSpawner.cs" />
+    <Compile Include="Assets\Scripts\Game\UIController.cs" />
     <Compile Include="Assets\Scripts\Game\StageController.cs" />
+    <Compile Include="Assets\Scripts\UIPausePanelAnimation.cs" />
+    <Compile Include="Assets\Scripts\Game\BlockArrangeSystem.cs" />
     <Compile Include="Assets\Scripts\Game\BackgroundBlock.cs" />
     <Compile Include="Assets\Scripts\Game\DragBlock.cs" />
     <Compile Include="Assets\Scripts\Game\DragBlockSpawner.cs" />
-    <Compile Include="Assets\Scripts\Game\BlockArrangeSystem.cs" />
-    <Compile Include="Assets\Scripts\Game\UIController.cs" />
     <Compile Include="Assets\Scripts\MainScenario.cs" />
-    <Compile Include="Assets\Scripts\UIPausePanelAnimation.cs" />
+    <Compile Include="Assets\Scripts\Screenshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

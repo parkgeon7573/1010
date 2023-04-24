@@ -12,6 +12,8 @@ public class StageController : MonoBehaviour
     DragBlockSpawner dragBlockSpawner;
     [SerializeField]
     BlockArrangeSystem blockArrangeSystem;
+    [SerializeField]
+    UIController uiController;
 
     public int CurrentScore { get; private set; }
     public int HighScore { get; private set; }
@@ -89,12 +91,12 @@ public class StageController : MonoBehaviour
 
         if (IsGameOver())
         {
-            Debug.Log("게임오바");
-
             if(CurrentScore > HighScore)
             {
                 PlayerPrefs.SetInt("HighScore", CurrentScore);
             }
+
+            uiController.GameOver();
         }
     }
 
